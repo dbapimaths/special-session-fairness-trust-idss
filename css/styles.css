@@ -1,91 +1,141 @@
+/* Box sizing for predictable layout */
+* { box-sizing: border-box; }
 
-/* --- Global Styling --- */
+/* Page background and base fonts */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #fafafa;
-    color: #222;
-    line-height: 1.6;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Main container */
+/* Main centered wrapper */
 .wrap {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 18px 40px;
 }
 
-/* --- Header Section --- */
+/* Header (blue band) */
 .header {
-    background: #0b5cff;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+  background: #0b5cff;
+  color: #fff;
+  padding: 22px 18px;
+  border-radius: 10px;
+  text-align: center;
+  /* Create a subtle inner layout */
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.header-logos, .logos {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 20px;
+/* Logos row inside header */
+.logos {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 860px;
+  margin-bottom: 8px;
 }
 
-.logo, .header-logos .logo {
-    height: 80px;
-    object-fit: contain;
+/* Individual logo sizing and alignment */
+.logo {
+  display: block;
+  height: 80px;                /* fixed height for balance */
+  width: auto;
+  max-width: 45%;              /* ensures logos don't overflow on small screens */
+  object-fit: contain;
 }
 
-/* --- Card Blocks --- */
+/* Header titles */
+.title-block h1 {
+  margin: 6px 0 0;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-align: center;
+}
+
+.title-block h2 {
+  margin: 6px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+/* Card styling (block-wise sections) */
 .card {
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #ffffff;
+  padding: 20px;
+  margin: 18px 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(12,20,40,0.06);
+  border: 1px solid rgba(15,15,15,0.03);
 }
 
+/* Card headings */
 .card h3 {
-    margin-top: 0;
-    font-size: 22px;
+  margin-top: 0;
+  font-size: 18px;
 }
 
-/* --- Lists --- */
-ul {
-    margin-left: 20px;
-}
-
-/* --- Tables --- */
+/* Table layout */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
 }
 
 table th, table td {
-    border: 1px solid #ccc;
-    padding: 10px;
+  padding: 10px 12px;
+  border: 1px solid #e6e6e6;
+  text-align: left;
 }
 
 table th {
-    background: #eee;
+  background: #f5f7fb;
+  font-weight: 600;
 }
 
-/* --- Links --- */
+/* Lists and links */
+ul {
+  margin: 8px 0;
+  padding-left: 18px;
+}
+
+.organizers li {
+  margin-bottom: 8px;
+}
+
 a {
-    color: #0b5cff;
-    text-decoration: none;
+  color: #0b5cff;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-/* --- Footer --- */
+/* Footer */
 .footer {
-    text-align: center;
-    padding: 20px;
-    color: #333;
-    background: #fff;
-    margin-top: 40px;
+  text-align: center;
+  padding: 14px;
+  margin-top: 18px;
+  color: #444;
+  background: transparent;
+  font-size: 13px;
 }
 
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .logo { height: 64px; max-width: 48%; }
+  .title-block h1 { font-size: 18px; }
+  .card { padding: 16px; }
+}
