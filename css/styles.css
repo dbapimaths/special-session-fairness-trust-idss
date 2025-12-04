@@ -1,141 +1,129 @@
-/* Box sizing for predictable layout */
-* { box-sizing: border-box; }
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-/* Page background and base fonts */
+* {
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fafafa;
-  color: #222;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f3f5f9;
+    color: #1f1f1f;
 }
 
-/* Main centered wrapper */
+/* Page wrapper */
 .wrap {
-  max-width: 1000px;
-  margin: 24px auto;
-  padding: 0 18px 40px;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
 }
 
-/* Header (blue band) */
+/* Header */
 .header {
-  background: #0b5cff;
-  color: #fff;
-  padding: 22px 18px;
-  border-radius: 10px;
-  text-align: center;
-  /* Create a subtle inner layout */
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+    background: linear-gradient(135deg, #d9eaff 0%, #f1f7ff 100%);
+    color: #003366;
+    padding: 40px 20px;
+    border-radius: 14px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
 
-/* Logos row inside header */
+/* Logo row */
 .logos {
-  display: flex;
-  gap: 28px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 860px;
-  margin-bottom: 8px;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
-/* Individual logo sizing and alignment */
+/* Logos */
 .logo {
-  display: block;
-  height: 80px;                /* fixed height for balance */
-  width: auto;
-  max-width: 45%;              /* ensures logos don't overflow on small screens */
-  object-fit: contain;
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    background: transparent;
 }
 
-/* Header titles */
-.title-block h1 {
-  margin: 6px 0 0;
-  font-size: 20px;
-  line-height: 1.2;
-  font-weight: 700;
-  text-align: center;
+/* Titles */
+.header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 10px 0 0;
 }
 
-.title-block h2 {
-  margin: 6px 0 0;
-  font-size: 14px;
-  font-weight: 500;
-  opacity: 0.95;
+.header h2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 4px;
+    color: #235489;
 }
 
-/* Card styling (block-wise sections) */
+/* Card sections */
 .card {
-  background: #ffffff;
-  padding: 20px;
-  margin: 18px 0;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(12,20,40,0.06);
-  border: 1px solid rgba(15,15,15,0.03);
+    background: #ffffff;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Card hover animation */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.10);
 }
 
 /* Card headings */
 .card h3 {
-  margin-top: 0;
-  font-size: 18px;
+    font-size: 22px;
+    margin-top: 0;
+    color: #0a3d80;
 }
 
-/* Table layout */
+/* Lists */
+ul {
+    padding-left: 20px;
+}
+
+/* Table */
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 12px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
 }
 
 table th, table td {
-  padding: 10px 12px;
-  border: 1px solid #e6e6e6;
-  text-align: left;
+    border: 1px solid #d7d7d7;
+    padding: 10px 12px;
 }
 
 table th {
-  background: #f5f7fb;
-  font-weight: 600;
+    background: #eef3ff;
+    font-weight: 600;
+    color: #003366;
 }
 
-/* Lists and links */
-ul {
-  margin: 8px 0;
-  padding-left: 18px;
-}
-
-.organizers li {
-  margin-bottom: 8px;
-}
-
+/* Links */
 a {
-  color: #0b5cff;
-  text-decoration: none;
+    color: #0057cc;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* Footer */
 .footer {
-  text-align: center;
-  padding: 14px;
-  margin-top: 18px;
-  color: #444;
-  background: transparent;
-  font-size: 13px;
-}
-
-/* Responsive tweaks */
-@media (max-width: 640px) {
-  .logo { height: 64px; max-width: 48%; }
-  .title-block h1 { font-size: 18px; }
-  .card { padding: 16px; }
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #555;
+    margin-top: 40px;
 }
